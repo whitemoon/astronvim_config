@@ -9,3 +9,7 @@
 -- vim.opt.wrap = false -- sets vim.opt.wrap
 
 -- vim.g.mapleader = " " -- sets vim.g.mapleader
+
+vim.opt.spelllang = "en_us,cjk"
+vim.opt.fileencodings = "ucs-bom,utf-8,gbk,big5,gb18030,latin1"
+vim.o.guifont = "Iosevka Nerd Font Mono:h15"

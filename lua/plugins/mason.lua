@@ -1,7 +1,13 @@
-if true then return {} end -- REMOVE THIS LINE TO ACTIVATE THIS FILE
-
 -- Example customization of mason plugins
 return {
+  {
+    "williamboman/mason.nvim",
+    opts = {
+      github = {
+        download_url_template = "https://ghproxy.com/https://github.com/%s/releases/download/%s/%s",
+      }
+    }
+  },
   -- use mason-lspconfig to configure LSP installations
   {
     "williamboman/mason-lspconfig.nvim",

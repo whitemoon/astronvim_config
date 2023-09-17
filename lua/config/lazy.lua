@@ -21,8 +21,21 @@ require("lazy").setup {
   spec = vim.list_extend(spec, {
     -- AstroCommunity import any community modules here
     -- TODO: Remove branch v4 on release
-    -- { "AstroNvim/astrocommunity", branch = "v4" },
-    -- { import = "astrocommunity.pack.lua" },
+    { "AstroNvim/astrocommunity", branch = "v4" },
+    { import = "astrocommunity.pack.lua" },
+    { import = "astrocommunity.pack.cpp" },
+    { import = "astrocommunity.pack.python" },
+    { import = "astrocommunity.pack.rust" },
+    { import = "astrocommunity.pack.toml" },
+    { import = "astrocommunity.pack.json" },
+    { import = "astrocommunity.pack.markdown" },
+    { import = "astrocommunity.editing-support.neogen" },
+    { import = "astrocommunity.editing-support.multicursors-nvim" },
+    { import = "astrocommunity.project.project-nvim" },
+    { import = "astrocommunity.project.nvim-spectre" },
+    { import = "astrocommunity.motion.flash-nvim" },
+    { import = "astrocommunity.motion.nvim-surround" },
+    { import = "astrocommunity.git.diffview-nvim" },
     { import = "plugins" }, -- import/override with your plugins
   }),
   defaults = {
