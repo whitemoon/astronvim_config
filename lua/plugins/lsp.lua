@@ -3,6 +3,9 @@ return {
   "AstroNvim/astrolsp",
   ---@type AstroLSPOpts
   opts = {
+    features = {
+      inlay_hints = vim.fn.has "nvim-0.10",
+    },
     -- Diagnostics configuration (for vim.diagnostics.config({...})) when diagnostics are on
     diagnostics = {
       virtual_text = false,
@@ -49,7 +52,16 @@ return {
     -- mappings to be set up on attaching of a language server
     mappings = {
       n = {
-        gl = { function() vim.diagnostic.open_float() end, desc = "Hover diagnostics" },
+        -- gl = { function() vim.diagnostic.open_float() end, desc = "Hover diagnostics" },
+        gl = { "<cmd>Lspsaga show_line_diagnostics<CR>", desc = "Show Line Diagnostic" },
+        gL = { "<cmd>Lspsaga show_buf_diagnostics<CR>", desc = "Show Buf Diagnostics" },
+        gh = { "<cmd>Lspsaga finder<CR>", desc = "Lsp Finder" },
+        ga = { "<cmd>Lspsaga code_action<CR>", desc = "Code Action" },
+        gr = { "<cmd>Lspsaga rename ++project<CR>", desc = "Lsp Rename" },
+        gd = { "<cmd>Lspsaga peek_definition<CR>", desc = "Peek Definition" },
+        gD = { "<cmd>Lspsaga goto_definition<CR>", desc = "Goto Definition" },
+        go = { "<cmd>Lspsaga outline<CR>", desc = "OutLine" },
+        K = { "<cmd>Lspsaga hover_doc<CR>", desc = "Hover Doc" },
         -- a `cond` key can provided as the string of a server capability to be required to attach, or a function with `client` and `bufnr` parameters from the `on_attach` that returns a boolean
         -- gD = {
         --   function() vim.lsp.buf.declaration() end,
@@ -62,6 +74,7 @@ return {
         --   cond = function(client) return client.server_capabilities.semanticTokensProvider and vim.lsp.semantic_tokens end,
         -- },
       },
+      t = {},
     },
   },
 }

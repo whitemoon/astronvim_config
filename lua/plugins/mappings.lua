@@ -23,6 +23,11 @@ return {
           desc = "Find projects",
         },
 
+        ["<leader>fT"] = {
+          "<cmd>TodoTelescope keywords=TODO,FIX,FIXME<cr>",
+          desc = "Find Todo/Fix/Fixme",
+        },
+
         -- mappings seen under group name "Buffer"
         -- ["<leader>bD"] = {
         --   function()
@@ -36,7 +41,9 @@ return {
         -- this is useful for naming menus
         -- ["<leader>b"] = { desc = "Buffers" },
         -- quick save
-        ["<C-s>"] = { ":w!<cr>", desc = "Save File" }, -- change description but the same command
+        ["<C-s>"] = { "<cmd>w!<cr><esc>", desc = "Save File" }, -- change description but the same command
+        ["<C-a>"] = { "<Home>", desc = "Goto Line First" }, -- change description but the same command
+        ["<C-e>"] = { "<End>", desc = "Goto Line End" }, -- change description but the same command
       },
       v = {
         ["<leader>f"] = { desc = "Find" },
@@ -44,6 +51,11 @@ return {
           function() require("telescope.builtin").grep_string() end,
           desc = "Find visual range words",
         },
+      },
+      i = {
+        ["<C-s>"] = { "<cmd>w!<cr><esc>", desc = "Save File" }, -- change description but the same command
+        ["<C-a>"] = { "<Home>", desc = "Goto Line First" }, -- change description but the same command
+        ["<C-e>"] = { "<End>", desc = "Goto Line End" }, -- change description but the same command
       },
       t = {
         -- setting a mapping to false will disable it
