@@ -42,24 +42,23 @@ return {
         -- ["<leader>b"] = { desc = "Buffers" },
         -- quick save
         ["<C-s>"] = { "<cmd>w!<cr><esc>", desc = "Save File" }, -- change description but the same command
-        ["<C-a>"] = { "<Home>", desc = "Goto Line First" }, -- change description but the same command
-        ["<C-e>"] = { "<End>", desc = "Goto Line End" }, -- change description but the same command
       },
       v = {
-        ["<leader>f"] = { desc = "Find" },
-        ["<leader>fg"] = {
+        ["<leader>f"] = { desc = require("astroui").get_icon("Find", 1, true) .. "Find" },
+        ["<leader>fw"] = {
           function() require("telescope.builtin").grep_string() end,
           desc = "Find visual range words",
         },
       },
       i = {
         ["<C-s>"] = { "<cmd>w!<cr><esc>", desc = "Save File" }, -- change description but the same command
-        ["<C-a>"] = { "<Home>", desc = "Goto Line First" }, -- change description but the same command
+        ["<C-a>"] = { "<ESC>^i", desc = "Goto Line First" }, -- change description but the same command
         ["<C-e>"] = { "<End>", desc = "Goto Line End" }, -- change description but the same command
       },
       t = {
         -- setting a mapping to false will disable it
         -- ["<esc>"] = false,
+        ["<esc><esc>"] = { "<c-\\><c-n>", desc = "Enter Normal Mode" },
       },
     },
   },

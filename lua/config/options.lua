@@ -12,13 +12,13 @@
 
 vim.opt.spelllang = "en_us,cjk"
 vim.opt.fileencodings = "ucs-bom,utf-8,gbk,big5,gb18030,latin1"
+vim.opt.list = true
+vim.opt.cursorcolumn = true
+vim.opt.guicursor = "n-v-c-sm:block,i-ci-ve-r-cr-o:hor20,a:blinkon100"
 vim.o.guifont = "Iosevka Nerd Font Mono:h15"
 
 if vim.g.neovide then
   vim.g.neovide_cursor_vfx_mode = "ripple"
   vim.g.neovide_underline_automatic_scaling = true
   vim.g.neovide_hide_mouse_when_typing = true
-  vim.g.neovide_floating_blur_amount_x = 2.0
-  vim.g.neovide_floating_blur_amount_y = 2.0
-  vim.g.neovide_scroll_animation_length = 0.3
 end
