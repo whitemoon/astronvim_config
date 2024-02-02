@@ -15,7 +15,7 @@ vim.opt.fileencodings = "ucs-bom,utf-8,gbk,big5,gb18030,latin1"
 vim.opt.list = true
 vim.opt.cursorcolumn = true
 vim.opt.guicursor = "n-v-c-sm:block,i-ci-ve-r-cr-o:hor20,a:blinkon100"
-vim.o.guifont = "Iosevka Nerd Font Mono:h15"
+vim.o.guifont = "GeistMono Nerd Font:h15"
 
 if vim.g.neovide then
   vim.g.neovide_cursor_vfx_mode = "ripple"

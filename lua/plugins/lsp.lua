@@ -1,10 +1,11 @@
 -- AstroLSP allows you to customize the features in AstroNvim's LSP configuration engine
+---@type LazySpec
 return {
   "AstroNvim/astrolsp",
   ---@type AstroLSPOpts
   opts = {
     features = {
-      inlay_hints = vim.fn.has "nvim-0.10",
+      inlay_hints = vim.fn.has "nvim-0.10" == 1,
     },
     -- Diagnostics configuration (for vim.diagnostics.config({...})) when diagnostics are on
     diagnostics = {
@@ -34,8 +35,7 @@ return {
     },
     -- enable servers that you already have installed without mason
     servers = {
-      "rust_analyzer",
-      -- "pyright"
+      -- "pyright",
     },
     -- customize language server configuration options passed to `lspconfig`
     config = {
