@@ -45,14 +45,17 @@ return {
       end
     end, { "i", "s" })
 
-    opts.sources = cmp.config.sources {
-      { name = "nvim_lsp", priority = 1000 },
-      { name = "luasnip", priority = 750 },
-      { name = "buffer", priority = 500 },
-      { name = "path", priority = 250 },
-      { name = "crates", priority = 250 },
-      { name = "rg", priority = 250 },
-    }
-    return opts
+    if not opts.sources then opts.sources = {} end
+    table.insert(opts.sources, { name = "crates", priority = 250 })
+    table.insert(opts.sources, { name = "rg", priority = 250 })
+    -- opts.sources = cmp.config.sources {
+    --   { name = "nvim_lsp", priority = 1000 },
+    --   { name = "luasnip", priority = 750 },
+    --   { name = "buffer", priority = 500 },
+    --   { name = "path", priority = 250 },
+    --   { name = "crates", priority = 250 },
+    --   { name = "rg", priority = 250 },
+    -- }
+    -- return opts
   end,
 }

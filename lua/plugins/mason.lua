@@ -1,4 +1,5 @@
--- Example customization of mason plugins
+-- Customize Mason plugins
+
 ---@type LazySpec
 return {
   {
@@ -6,8 +7,8 @@ return {
     opts = {
       github = {
         download_url_template = "https://mirror.ghproxy.com/https://github.com/%s/releases/download/%s/%s",
-      }
-    }
+      },
+    },
   },
   -- use mason-lspconfig to configure LSP installations
   {
